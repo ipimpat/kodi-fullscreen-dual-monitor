@@ -18,6 +18,7 @@ position_xbmc_window()
 	wmctrl -r "$NAME" -b remove,fullscreen
 	wmctrl -r "$NAME" -b remove,maximized_vert
 	wmctrl -r "$NAME" -b remove,maximized_horz
+	wmctrl -r "$NAME" -e '0,-1,-1,800,600'
 
 	# Position XBMC window on correct screen
 	if [ "$1" = "left" ]
@@ -30,6 +31,17 @@ position_xbmc_window()
 
 	# Make it fullscreen
 	wmctrl -r "$NAME" -b add,fullscreen
+}
+
+start_xbmc()
+{
+
+	ps cax | grep 'xbmc.bin' > /dev/null
+
+	if [ $? -ne 0 ]; then
+		SDL_VIDEO_ALLOW_SCREENSAVER=0 exec xbmc
+	fi
+
 }
 
 # Main
@@ -50,5 +62,5 @@ case "$1" in
 		exit 1
 esac
 
-position_xbmc_window "$SCREEN" & SDL_VIDEO_ALLOW_SCREENSAVER=0 exec xbmc
+position_xbmc_window "$SCREEN" & start_xbmc
 
