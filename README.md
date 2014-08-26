@@ -1,9 +1,9 @@
 xbmc-fullscreen-dual-monitor
 ============================
 
-Run XBMC in fullscreen on a single monitor in dual monitor setup (Linux)
+Run XBMC in fullscreen on a specific display in a dual monitor setup (Linux)
 
-This scripts allows you to make XBMC fullscreen on the left or right monitor while running in windowed mode. It has the advantage that you can move the cursor in and out of the window.
+This script allows you to make XBMC fullscreen on the left or right monitor while running in windowed mode. It has the advantage that you can move the cursor in and out of the window.
 
 If you just wan't to prevent XBMC from stretching across mutiple monitors while running in fullscreen, you can use the SDL_VIDEO_FULLSCREEN_HEAD environment variable which can be used to select the screen used for fullscreen
 
