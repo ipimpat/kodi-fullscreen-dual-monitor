@@ -11,14 +11,14 @@ If you just wan't to prevent XBMC from stretching across mutiple monitors while 
 SDL_VIDEO_FULLSCREEN_HEAD=0 /usr/bin/xbmc -fs
 ```
 
-## Installation
+## XBMC Configuration
 
 First of all, you will need to configure XBMC to run in window mode
 
 - System > Video Output
 - "Display mode" select "Windowed"
 
-### Requirements
+### Installation of requirements
 
 #### wmctrl
 
