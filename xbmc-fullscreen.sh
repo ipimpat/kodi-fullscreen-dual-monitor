@@ -15,9 +15,9 @@ position_xbmc_window()
 	done
 
 	# Make sure XBMC is a free floating window
-	wmctrl -r "XBMC Media Center" -b remove,fullscreen
+	wmctrl -r "$NAME" -b remove,fullscreen
 	sleep 0.5
-	wmctrl -r "XBMC Media Center" -b remove,maximized_vert,maximized_horz
+	wmctrl -r "$NAME" -b remove,maximized_vert,maximized_horz
         sleep 0.5
 
 	# Position XBMC window on correct screen
@@ -31,7 +31,7 @@ position_xbmc_window()
         sleep 0.5
 
 	# Make it fullscreen
-        wmctrl -r "XBMC Media Center" -b add,maximized_vert,maximized_horz
+        wmctrl -r "$NAME" -b add,maximized_vert,maximized_horz
         sleep 0.5
 	wmctrl -r "$NAME" -b add,fullscreen
 
