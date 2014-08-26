@@ -15,22 +15,26 @@ position_xbmc_window()
 	done
 
 	# Make sure XBMC is a free floating window
-	wmctrl -r "$NAME" -b remove,fullscreen
-	wmctrl -r "$NAME" -b remove,maximized_vert
-	wmctrl -r "$NAME" -b remove,maximized_horz
-	wmctrl -r "$NAME" -e '0,-1,-1,800,600'
+	wmctrl -r "XBMC Media Center" -b remove,fullscreen
+	sleep 0.5
+	wmctrl -r "XBMC Media Center" -b remove,maximized_vert,maximized_horz
+        sleep 0.5
 
 	# Position XBMC window on correct screen
 	if [ "$1" = "left" ]
 	then		
-		wmctrl -r "$NAME" -e ''"$SCREEN_LEFT_POSITION"',-1,-1,-1'
+		wmctrl -r "$NAME" -e '0,'"$SCREEN_LEFT_POSITION"',-1,-1'
 	elif [ "$1" = "right" ]
 	then
-		wmctrl -r "$NAME" -e ''"$SCREEN_RIGHT_POSITION"',-1,-1,-1'
+		wmctrl -r "$NAME" -e '0,'"$SCREEN_RIGHT_POSITION"',-1,-1'
 	fi
+        sleep 0.5
 
 	# Make it fullscreen
+        wmctrl -r "XBMC Media Center" -b add,maximized_vert,maximized_horz
+        sleep 0.5
 	wmctrl -r "$NAME" -b add,fullscreen
+
 }
 
 start_xbmc()
