@@ -30,7 +30,7 @@ RPM-based
 
 ### Setup
 
-Edit the variables at the top to fit your setup, default is 2x1920x1080 
+Edit the variables at the top of the xbmc-fullscreen.sh script to fit your setup, default is 2x1920x1080 
 
 ```Bash
 SCREEN_LEFT_POSITION="0,0" 
