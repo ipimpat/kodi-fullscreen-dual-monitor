@@ -25,8 +25,11 @@ First of all, you will need to configure XBMC to run in window mode
 Debian-based/Ubuntu-based
 > sudo apt-get install wmctrl
 
-RPM-based
+RHEL-based (CentOS, Fedora, ...)
 > yum install wmctrl
+
+openSUSE-based
+> zypper install wmctrl
 
 ### Setup
 
