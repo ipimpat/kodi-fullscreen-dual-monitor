@@ -1,6 +1,6 @@
 #!/bin/bash
 
-NAME='XBMC Media Center'
+NAME='Kodi'
 SCREEN_LEFT_POSITION="0,0"
 SCREEN_RIGHT_POSITION="1920,0"
 
