@@ -1,49 +1,59 @@
 #!/bin/bash
 
-NAME='Kodi'
+WINDOW='Kodi'
 SCREEN_LEFT_POSITION="0,0"
 SCREEN_RIGHT_POSITION="1920,0"
 
-# Position XBMC Window function
-position_xbmc_window() 
+# Position Kodi Window function
+position_kodi_window() 
 {
 
-	# Wait for XBMC Window
-	while [ -z "`wmctrl -l | grep \"$NAME\"`" ]
+	# Wait for Kodi Window
+	while [ -z "`wmctrl -l | grep \"$WINDOW\"`" ]
 	do
 		sleep 1
 	done
 
-	# Make sure XBMC is a free floating window
-	wmctrl -r "$NAME" -b remove,fullscreen
+	# Make sure Kodi is a free floating window
+	wmctrl -r "$WINDOW" -b remove,fullscreen
+
+	# Relax a little before next action
 	sleep 0.5
-	wmctrl -r "$NAME" -b remove,maximized_vert,maximized_horz
+
+	wmctrl -r "$WINDOW" -b remove,maximized_vert,maximized_horz
+
+	# Relax a little before next action
         sleep 0.5
 
-	# Position XBMC window on correct screen
+	# Position Kodi window on correct screen
 	if [ "$1" = "left" ]
 	then		
-		wmctrl -r "$NAME" -e '0,'"$SCREEN_LEFT_POSITION"',-1,-1'
+		wmctrl -r "$WINDOW" -e '0,'"$SCREEN_LEFT_POSITION"',-1,-1'
 	elif [ "$1" = "right" ]
 	then
-		wmctrl -r "$NAME" -e '0,'"$SCREEN_RIGHT_POSITION"',-1,-1'
+		wmctrl -r "$WINDOW" -e '0,'"$SCREEN_RIGHT_POSITION"',-1,-1'
 	fi
+
+	# Relax a little before next action
         sleep 0.5
 
 	# Make it fullscreen
-        wmctrl -r "$NAME" -b add,maximized_vert,maximized_horz
+        wmctrl -r "$WINDOW" -b add,maximized_vert,maximized_horz
+
+	# Relax a little before next action
         sleep 0.5
-	wmctrl -r "$NAME" -b add,fullscreen
+
+	wmctrl -r "$WINDOW" -b add,fullscreen
 
 }
 
-start_xbmc()
+start_kodi()
 {
 
-	ps cax | grep 'xbmc.bin' > /dev/null
+	ps cax | grep 'kodi.bin' > /dev/null
 
 	if [ $? -ne 0 ]; then
-		SDL_VIDEO_ALLOW_SCREENSAVER=0 exec xbmc
+		SDL_VIDEO_ALLOW_SCREENSAVER=0 exec kodi
 	fi
 
 }
@@ -66,5 +76,5 @@ case "$1" in
 		exit 1
 esac
 
-position_xbmc_window "$SCREEN" & start_xbmc
+position_kodi_window "$SCREEN" & start_kodi
 
