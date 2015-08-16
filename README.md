@@ -1,3 +1,10 @@
+This repository is no longer needed.
+============================
+
+Kodi now (at least for my part: `15.1 Git:d496682 Media Center Kodi`) detects both my monitors instead of one big virtual display, which means I can switch around the monitors from within Kodi and it no longer binds the cursor to the window either.
+
+However this script still allows you to specify which monitor to start move Kodi to and it also allows you to move Kodi to the other monitor from outside Kodi.
+
 kodi-fullscreen-dual-monitor
 ============================
 
@@ -33,12 +40,14 @@ openSUSE-based
 
 ## Setup
 
-Edit the variables at the top of the kodi-fullscreen.sh script to fit your setup, default is 2x1920x1080 
+Edit the position variables at the top of the kodi-fullscreen.sh script to fit your setup, default is 2x1920x1080 
 
 ```Bash
 SCREEN_LEFT_POSITION="0,0" 
 SCREEN_RIGHT_POSITION="1920,0"
 ```
+
+You may also have to change the name variable to what ever the title of the XBMC/Kodi Window is set to in your distro/package version.
 
 ## Run
 > ~ $ kodi-fullscreen.sh {left|right}
