@@ -3,7 +3,7 @@ This repository is no longer needed.
 
 Kodi now (at least for my part: `15.1 Git:d496682 Media Center Kodi`) detects both my monitors instead of one big virtual display, which means I can switch around the monitors from within Kodi and it no longer binds the cursor to the window either.
 
-However this script still allows you to specify which monitor to start move Kodi to and it also allows you to move Kodi to the other monitor from outside Kodi.
+However this script still allows you to specify which monitor to move Kodi to when starting and it also allows you to move Kodi to the other monitor from outside Kodi.
 
 kodi-fullscreen-dual-monitor
 ============================
